@@ -55,3 +55,65 @@ Usage
 
         - DATASET_DIR=<directory of middlebury dataset (where folders like Dimetrodon, Grove2, ... are located)>
         - GROUNDTRUTH_DIR=<directory of ground-truth (where folders like Dimetrodon, Grove2, ... are located)>
+
+
+***
+***
+
+Here are the results of PatchMatch algorithm implementation on the middlebury dataset.
+For the first images CrossCorrelationNormalized, for the second images SumOfSquaredDifferences have been utilized.
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Beanbags-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Beanbags-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Dimetrodon-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Dimetrodon-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/DogDance-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/DogDance-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Grove2-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Grove2-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Grove3-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Grove3-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Hydrangea-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Hydrangea-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/MiniCooper-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/MiniCooper-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/RubberWhale-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/RubberWhale-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Urban2-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Urban2-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Urban3-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Urban3-SumOfSquaredDifferences.png)
+
+***
+
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Walking-CrossCorrelationNormalized.png)
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Walking-SumOfSquaredDifferences.png)
