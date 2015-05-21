@@ -32,14 +32,6 @@ public:
         int min_c);
 
 private:
-  float ComputeSumSquaredDifferences(
-            cv::Mat in1, 
-            cv::Mat in2, 
-            int radius, 
-            int r_1, 
-            int c_1, 
-            int r_2, 
-            int c_2);
   cv::Mat MinFlowFields(
             cv::Mat in1, 
             cv::Mat in2, 
