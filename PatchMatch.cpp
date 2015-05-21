@@ -51,14 +51,15 @@ void PatchMatch::PyramidApproach(
         int min_r, 
         int min_c) {
 
-  // compute levels
   int s_r = m_rows;
   int s_c = m_cols;
 
+  // 1) init level vectors
   std::vector<cv::Mat> levels1, levels2;
   levels1.push_back(m_in1);
   levels2.push_back(m_in2);
 
+  // 2) generate levels by iteratively halving original images
   while(s_r>min_r && s_c>min_r) {
     s_r = s_r/2;
     s_c = s_c/2;
@@ -75,9 +76,10 @@ void PatchMatch::PyramidApproach(
   std::reverse(levels1.begin(), levels1.end());
   std::reverse(levels2.begin(), levels2.end());
 
+  // 3) iterate through all levels; starting at the smallest
   cv::Mat matPreviousLevel = InitRandom(levels1[0].rows, levels1[0].cols);
   for(int i=1; i<levels1.size(); i++) {
-    // Propagate from previous level level
+    // 3.1.a) propagate flow vectors from previous level
     cv::Mat matThisLevel(levels1[i].rows, levels1[i].cols, CV_32SC2, cv::Scalar::all(0));
     for(int r=0; r<levels1[i].rows; r++) {
       for(int c=0; c<levels1[i].cols; c++) {
@@ -86,7 +88,7 @@ void PatchMatch::PyramidApproach(
       }
     }
 
-    // PatchMatch on random Initialization
+    // 3.1.b) PatchMatch on random Initialization
     cv::Mat matRandom = InitRandom(levels1[i].rows, levels1[i].cols);
     matRandom = ComputeFlowField(
                   levels1[i], 
@@ -94,12 +96,14 @@ void PatchMatch::PyramidApproach(
                   (i%2!=0)?true:false, 
                   matRandom );
 
+    // 3.2) min(result from 3.1.a, result from 3.1.b)
     cv::Mat flowFieldMin = MinFlowFields(
                             levels1[i], 
                             levels2[i], 
                             matThisLevel, 
                             matRandom );
 
+    // 4) Do 4 iterations of PatchMatch
     cv::Mat matFollow;
     flowFieldMin.copyTo(matFollow);
     for(int j=0; j<=3; j++) {
@@ -110,6 +114,7 @@ void PatchMatch::PyramidApproach(
                     matFollow );
     }
 
+    // 5) update matPreviousLevel for next iteration
     matPreviousLevel = cv::Mat(levels1[i].rows, levels1[i].cols, CV_32SC2, cv::Scalar::all(0));
     matFollow.copyTo(matPreviousLevel); 
 
@@ -427,10 +432,10 @@ void PatchMatch::toFlowFile(
 
   for(int r=0; r<dim_r; r++) {
     for(int c=0; c<dim_c; c++) {
-      float band0 = (float)flowField.at<cv::Vec2i>(r, c)[0];
+      float band0 = (float)flowField.at<cv::Vec2i>(r, c)[1];
       fwrite(&band0, sizeof(float), 1, stream);
 
-      float band1 = (float)flowField.at<cv::Vec2i>(r, c)[1];
+      float band1 = (float)flowField.at<cv::Vec2i>(r, c)[0];
       fwrite(&band1, sizeof(float), 1, stream);
     }
   }

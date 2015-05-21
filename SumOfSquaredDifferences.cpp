@@ -48,7 +48,7 @@ float SumOfSquaredDifferences::ComputeDifference(
   }
 
   if(pixelCount==0)
-    return INT_MAX;
+    return FLT_MAX;
 
   return sum/pixelCount;
 }
