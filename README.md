@@ -65,6 +65,10 @@ For the first images CrossCorrelationNormalized, for the second images SumOfSqua
 
 ***
 
+![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/colors.png)
+
+***
+
 ![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Beanbags-CrossCorrelationNormalized.png)
 ![](https://github.com/alexanderb14/PatchMatch-Optical-Flow/blob/master/results/Beanbags-SumOfSquaredDifferences.png)
 
